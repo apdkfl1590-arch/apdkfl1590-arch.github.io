@@ -21,7 +21,7 @@
         <span class="theme-icon">🌙</span>
       </button>
 
-      <header class="hero">
+      <header class="topbar">
         <div class="banner-wrap">
           <a href="./index.html" class="banner-link" aria-label="홈으로 이동">
             <img
@@ -31,6 +31,17 @@
             />
           </a>
         </div>
+
+        <nav class="topnav" aria-label="메인 네비게이션">
+          <a href="#about">한줄소개</a>
+          <a href="#academic">학적</a>
+          <a href="#interest">관심 분야</a>
+          <a href="#hobby">취미 분야</a>
+          <a href="#class">수업</a>
+        </nav>
+      </header>
+
+      <header class="hero" id="about">
 
         <div class="profile-block">
           <img
@@ -60,13 +71,13 @@
         </div>
       </header>
 
-      <section class="academic-card">
+      <section class="academic-card" id="academic">
         <h2>학적</h2>
         <p>공주대학교 천안캠퍼스 2022~현재</p>
       </section>
 
       <main class="content">
-        <section class="card">
+        <section class="card" id="interest">
           <h2>관심 분야</h2>
           <ul>
             <li>AI</li>
@@ -76,7 +87,7 @@
           </p>
         </section>
 
-        <section class="card">
+        <section class="card" id="hobby">
           <h2>취미 분야</h2>
           <ul>
             <li>독서</li>
@@ -86,7 +97,7 @@
           </p>
         </section>
 
-        <section class="card">
+        <section class="card" id="class">
           <h2>수업</h2>
           <p>
             <a href="https://sail-knu.github.io/Home/#home" target="_blank" rel="noreferrer">
