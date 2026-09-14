@@ -12,20 +12,38 @@
   </head>
   <body>
     <div class="page-shell">
+      <button
+        class="theme-toggle"
+        type="button"
+        aria-label="다크 모드 전환"
+        title="다크 모드 전환"
+      >
+        <span class="theme-icon">🌙</span>
+      </button>
+
       <header class="hero">
-        <div class="hero-text">
-          <p class="eyebrow">Personal Introduction</p>
-          <h1>이주한</h1>
-          <p class="subtitle">
-            국립공주대학교 기계자동차공학부 기계공학전공
-          </p>
-          <p class="summary">
-            충북 청원군(현 청주시 상당구)에서 태어나서 학창생활을 보내다
-            충남 천안의 공주대학교로 입학. 포병대대에서 병사로 입대하여
-            임기제부사관(전문하사)으로 15개월동안 복무하고 전역.
-          </p>
-          <div class="contact-row">
-            <a href="mailto:apdkfl1590@gmail.com">apdkfl1590@gmail.com</a>
+        <div class="profile-block">
+          <img
+            class="profile-image"
+            src="얼굴사진.jpg"
+            alt="이주한 얼굴사진"
+          />
+
+          <div class="hero-text">
+            <p class="eyebrow">Personal Introduction</p>
+            <h1>이주한</h1>
+            <p class="subtitle">
+              국립공주대학교 기계자동차공학부 기계공학전공
+            </p>
+            <p class="summary">
+              충북 청원군(현 청주시 상당구)에서 태어나서 학창생활을 보내다
+              충남 천안의 공주대학교로 입학. 병사로 입대, 이후
+              임기제부사관(전문하사)으로 임관하여 15개월 복무, 도합 33개월
+              동안 복무 후 전역.
+            </p>
+            <div class="contact-row">
+              <a href="mailto:apdkfl1590@gmail.com">apdkfl1590@gmail.com</a>
+            </div>
           </div>
         </div>
       </header>
@@ -34,17 +52,46 @@
         <section class="card">
           <h2>관심 분야</h2>
           <ul>
-            <li>진로설계</li>
-            <li>기타연주</li>
-            <li>독서</li>
+            <li>반도체</li>
+            <li>AI</li>
           </ul>
         </section>
 
         <section class="card">
           <h2>수업</h2>
-          <p>미래첨단기술의이해 I</p>
+          <p>
+            <a href="https://sail-knu.github.io/Home/#home" target="_blank" rel="noreferrer">
+              미래첨단기술의이해 I
+            </a>
+          </p>
         </section>
       </main>
     </div>
+
+    <script>
+      const body = document.body;
+      const toggleButton = document.querySelector('.theme-toggle');
+      const themeIcon = document.querySelector('.theme-icon');
+
+      function applyTheme(theme) {
+        const isDark = theme === 'dark';
+        body.classList.toggle('dark-mode', isDark);
+        themeIcon.textContent = isDark ? '☀️' : '🌙';
+        toggleButton.setAttribute(
+          'aria-label',
+          isDark ? '일반 모드 전환' : '다크 모드 전환'
+        );
+        toggleButton.title = isDark ? '일반 모드 전환' : '다크 모드 전환';
+      }
+
+      const savedTheme = localStorage.getItem('theme') || 'light';
+      applyTheme(savedTheme);
+
+      toggleButton.addEventListener('click', () => {
+        const nextTheme = body.classList.contains('dark-mode') ? 'light' : 'dark';
+        localStorage.setItem('theme', nextTheme);
+        applyTheme(nextTheme);
+      });
+    </script>
   </body>
 </html>
