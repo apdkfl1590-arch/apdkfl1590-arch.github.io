@@ -13,17 +13,17 @@
 }
 
 body.dark-mode {
-  --bg: #0f172a;
-  --panel: #111827;
-  --text: #e5edf9;
-  --subtext: #c3d0e6;
+  --bg: #000000;
+  --panel: #111111;
+  --text: #ffffff;
+  --subtext: #e5e7eb;
   --accent: #8ab4ff;
-  --accent-soft: #1f2c46;
-  --border: #24314d;
-  --shadow: rgba(15, 23, 42, 0.6);
-  --hero-bg: linear-gradient(135deg, #172338 0%, #111827 100%);
-  --button-bg: #172338;
-  --button-border: #2a3f5e;
+  --accent-soft: #1b1f2a;
+  --border: #2b2b2b;
+  --shadow: rgba(0, 0, 0, 0.7);
+  --hero-bg: linear-gradient(135deg, #111111 0%, #000000 100%);
+  --button-bg: #111111;
+  --button-border: #333333;
 }
 
 * {
@@ -39,7 +39,8 @@ body {
 }
 
 body.dark-mode {
-  background: linear-gradient(180deg, #0b1220 0%, var(--bg) 100%);
+  background: linear-gradient(180deg, #000000 0%, var(--bg) 100%);
+  color: var(--text);
 }
 
 .page-shell {
@@ -184,6 +185,12 @@ h1 {
 .card p {
   margin: 0;
   line-height: 1.8;
+  color: var(--subtext);
+}
+
+.card-description {
+  margin-top: 14px;
+  font-size: 0.96rem;
   color: var(--subtext);
 }
 
