@@ -33,6 +33,7 @@ body.dark-mode {
 body {
   margin: 0;
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: var(--bg);
   background-image: url("./bakimege.jpg");
   background-position: center center;
   background-repeat: no-repeat;
@@ -43,7 +44,12 @@ body {
 }
 
 body.dark-mode {
-  background: linear-gradient(180deg, #000000 0%, var(--bg) 100%);
+  background-color: #000000;
+  background-image: url("./bakimege.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
   color: var(--text);
 }
 
@@ -96,7 +102,7 @@ body.dark-mode {
 .banner-image {
   display: block;
   width: 100%;
-  height: auto;
+  max-height: 260px;
   border-radius: 18px;
   object-fit: cover;
 }
