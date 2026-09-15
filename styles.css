@@ -118,6 +118,12 @@ body.dark-mode .topbar {
   gap: 10px;
 }
 
+.hero,
+.academic-card,
+.card {
+  scroll-margin-top: 130px;
+}
+
 .topnav a {
   color: var(--text);
   text-decoration: none;
@@ -133,12 +139,10 @@ body.dark-mode .topbar {
 }
 
 .theme-toggle {
-  position: fixed;
-  top: 18px;
-  right: 20px;
-  z-index: 40;
-  width: 48px;
-  height: 48px;
+  position: relative;
+  z-index: 30;
+  width: 36px;
+  height: 36px;
   border: 1px solid var(--button-border);
   border-radius: 50%;
   background: var(--button-bg);
@@ -149,6 +153,7 @@ body.dark-mode .topbar {
   align-items: center;
   justify-content: center;
   transition: transform 0.2s ease, background 0.2s ease;
+  flex: 0 0 36px;
 }
 
 .theme-toggle:hover {
@@ -307,14 +312,46 @@ body.dark-mode .hero {
   color: var(--subtext);
 }
 
+.hobby-item {
+  display: grid;
+  grid-template-columns: 100px 1fr;
+  gap: 20px;
+  align-items: start;
+  padding: 16px 0;
+  border-top: 1px solid var(--border);
+}
+
+.hobby-item:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.hobby-item strong {
+  color: var(--text);
+}
+
+.hobby-item p {
+  margin: 0;
+}
+
+.hobby-item .card-description {
+  margin-top: 10px;
+}
+
+.quote-source {
+  display: block;
+  margin-left: 8.5em;
+}
+
 @media (max-width: 640px) {
   .page-shell {
     padding-top: 24px;
   }
 
   .theme-toggle {
-    right: 14px;
-    top: 16px;
+    width: 34px;
+    height: 34px;
+    flex-basis: 34px;
   }
 
   .hero {
@@ -333,5 +370,14 @@ body.dark-mode .hero {
 
   .card {
     padding: 22px 18px;
+  }
+
+  .hobby-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .quote-source {
+    margin-left: 0;
   }
 }
